@@ -1,0 +1,162 @@
+body {
+    font: 18px Helvetica, sans-serif;
+    color: #333;
+    padding: 20px;
+    background: linear-gradient(#d6efef, #ffffff);
+  }
+  
+  h1 h2 h3 {
+    color: rgba(31, 31, 31, 0.68);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: #0073AA;
+    text-decoration: none;
+  }
+  
+  form {
+    margin-top: 1em;
+    margin-bottom: 4em;
+  }
+  form .form-row {
+    padding: 0.5em;
+  }
+  
+  #work-form {
+    padding: 2em;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+  }
+  ul li {
+    display: inline;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 17px;
+  }
+  ul li a {
+    color: rgba(24, 24, 24, 0.68);
+    padding: 14px;
+  }
+  ul li a:hover {
+    background-color: #45a6cc;
+  }
+  
+  input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #45a6cc;
+    width: 100%;
+    margin-bottom: 2rem;
+    font-size: 16px;
+    padding: 3px;
+    color: rgba(24, 24, 24, 0.68);
+    outline: none;
+  }
+  input[type=submit] {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  input[type=submit][type=submit]:hover {
+    background: #45a6cc;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #03e9f4;
+  }
+  
+  label {
+    top: 0;
+    left: 0;
+    color: #070707;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  table thead tr {
+    background-color: #45a6cc;
+    color: #ffffff;
+    text-align: left;
+    text-decoration: none;
+  }
+  table th, table td {
+    padding: 10px 10px;
+    text-align: center;
+  }
+  table tbody tr {
+    color: rgba(24, 24, 24, 0.68);
+    border-bottom: 1px solid #dddddd;
+    text-decoration: none;
+  }
+  table tbody tr:nth-of-type(even) {
+    background-color: #d6efef;
+  }
+  table tbody tr:last-of-type {
+    border-bottom: 2px solid #45a6cc;
+  }
+  
+  button {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #45a6cc;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+    padding: 3px;
+    color: rgba(24, 24, 24, 0.68);
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #45a6cc;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #03e9f4;
+  }
+  
+  #checkbox {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  #word-cloud {
+    padding: 2em;
+    display: inline-flex;
+  }
+  
+  #kw-body {
+    display: inline-flex;
+  }
+  
+  /*# sourceMappingURL=style.css.map */

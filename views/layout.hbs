@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<title>News Searching</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+<body>
+    <div id="work-form">
+        <div id="hd">
+            {{#if user}}
+            <div>Logged in as: {{user.username}} (<a href="/logout">Logout</a>)</div>
+            {{/if}}
+            <h1>Two Truths and a Lie</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Search</a></li>
+                <li><a href="/news">All news</a></li>
+                <li><a href="/keywords">All keywords</a></li>
+            </ul>
+        </nav>
+        <div id="bd">
+        {{{body}}}
+        </div>
+    </div>
+</body>
+</html>

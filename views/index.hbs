@@ -1,0 +1,42 @@
+<form method="GET" action="">
+    <h2>Search for Reliability</h2>
+    <p><input type="text" name="newsTitle" placeholder="News Title" required></p>
+    <p><input type="text" name="media" placeholder="Source"></p>
+    <p><input type="date" name="newsDate"></p>
+    <input type="submit" value="Search">
+</form>
+<h3>There are {{data.count}} total results</h3>
+<form method="GET" action="">
+    <table>
+        <thead>
+        <tr>
+            <td>
+                Top 5 results:
+            </td>
+            <td>
+                Source:
+            </td>
+            <td>
+                Date:
+            </td>
+        </tr>
+        </thead>
+        {{#each data.articles}}
+            <tbody>
+            <tr>
+                <td>
+                    <a href={{this.url}}>{{this.title}}</a>
+                </td>
+                <td>
+                    {{this.source}}
+                </td>
+                <td>
+                    {{this.date}}
+                </td>
+            </tr>
+            </tbody>
+        {{/each}}
+    </table>
+</form>
+
+

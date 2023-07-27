@@ -1,0 +1,50 @@
+<form method="GET" action="">
+    <h2>Filter the News in the Database: </h2>
+    <input type="text" name="titleFilter" placeholder="Title">
+    <input type="text" name="sourceFilter" placeholder="Source">
+    <input type="text" name="keywordsFilter" placeholder="Keywords">
+    <input type="submit" value="Filter">
+</form>
+<form method="POST" action="">
+    <h2>Add News to the Database: </h2>
+    <p><input type="text" name="newsTitleAdd" placeholder="Title" required></p>
+    <p><input type="text" name="mediaAdd" placeholder="Source"></p>
+    <p><input type="text" name="keywordsAdd" placeholder="Keyword"></p>
+    <p><input type="date" name="newsDateAdd"></p>
+    <input type="submit" value="Add News">
+</form>
+<script>
+    function DeleteRow(o) {
+        const p=o.parentNode.parentNode;
+        p.parentNode.removeChild(p);
+    }
+</script>
+<form method="POST" action="/news/delete">
+    <table>
+        <thead>
+        <tr>
+            <td>Title</td>
+            <td>Source</td>
+            <td>Keywords</td>
+            <td>Date</td>
+            <td><input type="submit" value="Delete Selected"></td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each ns}}
+            <tr>
+                <td>{{ this.title }}</td>
+                <td>{{ this.source }}</td>
+                <td>{{ this.keywords }}</td>
+                <td>{{ this.date }}</td>
+                <td><input id="checkbox" type="checkbox" name="checkbox" value = "{{this.title}}" ></td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</form>
+
+<script>
+
+    DeleteRow();
+</script>

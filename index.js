@@ -1,14 +1,30 @@
 const express = require('express')
+const path = require('path');
+
 
 const app = express()
+const routes = require('./routes/idx.js');
+const keywords = require('./routes/keywords.js');
+const news = require('./routes/news.js');
+const session = require('express-session');
 
-app.get('/', (req, res) => {
-    res.send('Express JS on Vercel')
-})
+app.use(express.urlencoded({ extended: false }));
 
-app.get('/ping', (req, res) => {
-    res.send('pong 🏓')
-})
+app.set('view engine', 'hbs');
+
+const sessionOptions = {
+  secret: 'secret cookie thang (store this elsewhere!)',
+  resave: true,
+  saveUninitialized: true
+};
+app.use(session(sessionOptions));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use('/', routes);
+app.use('/search', routes);
+app.use('/keywords', keywords);
+app.use('/news', news);
 
 const port = process.env.PORT || 8080
 
