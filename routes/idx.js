@@ -137,13 +137,13 @@ router.get('/search',async (req, res) => {
             });
         });
     }
-    res.render('index.hbs', {'data': data});
+    res.render('idx', {'data': data});
 });
 router.post('/search', async (req, res) => {
     const title = req.body.kwToSearch;
     const data = await SearchAPI(title, '', undefined);
     data.articles = data.articles.filter((news, index) => index < 5);
-    res.render('index.hbs', {'data': data});
+    res.render('idx', {'data': data});
 });
 
 
