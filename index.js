@@ -12,12 +12,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.set('view engine', 'hbs');
 
-// const sessionOptions = {
-//   secret: 'secret cookie thang (store this elsewhere!)',
-//   resave: true,
-//   saveUninitialized: true
-// };
-// app.use(session(sessionOptions));
+const sessionOptions = {
+  secret: 'secret cookie thang (store this elsewhere!)',
+  resave: true,
+  saveUninitialized: true
+};
+app.use(session(sessionOptions));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
