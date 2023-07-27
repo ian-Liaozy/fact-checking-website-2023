@@ -32,6 +32,32 @@ class KeywordClass {
 
 }
 
+// class NewsClass {
+//     constructor(keyword, totalCount) {
+//         this._keyword = keyword;
+//         this._total_count = totalCount;
+//     }
+//     get keyword() {
+//         return this._keyword;
+//     }
+//     set keyword(value) {
+//         this._keyword = value;
+//     }
+//     get total_count() {
+//         return this._total_count;
+//     }
+//     set total_count(value) {
+//         this._total_count = value;
+//     }
+//     toObject(){
+//         const toReturn = {};
+//         if (this.keyword) {toReturn.keyword = this.keyword;}
+//         if (this.total_count) {toReturn.total_count = this.total_count;}
+//         return toReturn;
+//     }
+
+// }
+
 async function SearchAPI(title, source, date){
     if (title === undefined && source === undefined){
         return {articles: [], count: 0};
@@ -79,31 +105,26 @@ router.get('/search',async (req, res) => {
     query.title = req.query.newsTitle;
     query.source = req.query.media;
     query.date = req.query.newsDate;
+    // console.log(query, req.query)
     if (query.title !== undefined){
         query.keywords = req.query.newsTitle.toLowerCase().replace(',', '').split(' ');
         const newsAdd = new News(query);
-        //console.log('newsAdd', newsAdd);
-        newsAdd.save(function(err, ns, count){
-            if (err){
-                console.log(err);
-            }
-        });
+        
+        // console.log('newsAdd', newsAdd);
+        // newsAdd["Content-Type"] = 'application/json';
+        // newsAdd.save();
         query.keywords.forEach((kw) => {
             // const kwQuery = {"keyword": kw};
             const kwNew = new KeywordClass(kw, 1);
-            Keyword.find(kwNew.toObject(), (err, found) => {
+            Keyword.find(kwNew.toObject()).then( (err, found) => {
                 // console.log(found[0]);
                 if (err){
                     console.log(err);
                 }
-                if (found[0] === undefined){
+                if (found === undefined || found[0] === undefined){
                     kwNew.total_count = 1;
                     const newKw = new Keyword(kwNew.toObject());
-                    newKw.save(function(err, ns, count){
-                        if (err){
-                            console.log(err);
-                        }
-                    });
+                    // newKw.save();
                 }
                 else {
                     const newCount = found[0]["total_count"] + 1;

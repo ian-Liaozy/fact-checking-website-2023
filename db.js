@@ -40,3 +40,6 @@ dbconf = 'mongodb+srv://zl3057:ian@cluster0.4usnwgg.mongodb.net/';
 mongoose.model('Keyword', Keyword);
 mongoose.model('News', News);
 mongoose.connect(dbconf);
+
+module.exports = mongoose.model('Keyword', Keyword);
+module.exports = mongoose.model('News', News);

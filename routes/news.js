@@ -59,10 +59,7 @@ router.get('/', (req, res) => {
 		regexSearchOptions.keywords = {"$regex": req.query.keywordsFilter};
 	}
 	const toFind = regexSearchOptions.toObject();
-	News.find(toFind, (err, varToStoreResult, count) => {
-		if (err){
-			console.log(err);
-		}
+	News.find(toFind).then(function(varToStoreResult){
 		res.render('news', {ns: varToStoreResult});
 	});
 });
