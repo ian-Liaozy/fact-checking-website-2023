@@ -19,7 +19,7 @@ const sessionOptions = {
 };
 app.use(session(sessionOptions));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.set('views', path.join(__dirname, 'views'))
 
 app.use('/', routes);
 app.use('/search', routes);
